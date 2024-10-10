@@ -1,23 +1,12 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-void vulnerable_function(char *input) {
-    char buffer[64];
-    if (strlen(input) > 64) {
-        printf("Buffer overflow detected!\n");
-        return;
-    }
-    strcpy(buffer, input); // Vulnerable to buffer overflow
+int main() {
+    char buffer[10]; // Buffer with a fixed size of 10 characters
+
+    printf("Enter some text: ");
+    //scanf("%s",buffer); // Vulnerable to buffer overflow as there's no size check
+    fgets(buffer,sizeof(buffer), stdin);
     printf("You entered: %s\n", buffer);
-}
 
-int main(int argc, char *argv[]) {
-    if (argc < 2) {
-        printf("Usage: %s <input>\n", argv[0]);
-        return 1;
-    }
-    vulnerable_function(argv[1]);
     return 0;
 }
-

@@ -33,7 +33,7 @@ mkdir -p "$OUTPUT_CORPUS"
 
 # Step 1: Fuzz the binary using AFL++ in Unicorn mode
 echo "[*] Starting AFL++ fuzzing in Unicorn mode..."
-afl-fuzz -U -i "$INPUT_CORPUS" -o "$OUTPUT_CORPUS" -- "$BINARY" @@
+afl-fuzz -U -i "$INPUT_CORPUS" -o "$OUTPUT_CORPUS" -- "$BINARY"
 
 # Check if AFL++ fuzzing completed successfully
 if [ $? -ne 0 ]; then
