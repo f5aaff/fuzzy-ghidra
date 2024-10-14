@@ -1,6 +1,6 @@
 # environment variables:
-AFL_CUSTOM_INFO_PROGRAM=./buffer_overflow
+AFL_CUSTOM_INFO_PROGRAM=./bin/multiple_BO
 AFL_CUSTOM_INFO_PROGRAM_ARGV=
 AFL_CUSTOM_INFO_OUT=output_corpus//default
 # command line:
-'afl-fuzz' '-m' 'none' '-t' '2000+' '-i' 'input_corpus/input.txt' '-o' 'output_corpus/' '--' './buffer_overflow'
+'afl-fuzz' '-U' '-i' 'input_corpus/' '-o' 'output_corpus/' '--' './bin/multiple_BO'
