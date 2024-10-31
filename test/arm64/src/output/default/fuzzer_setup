@@ -1,6 +1,0 @@
-# environment variables:
-AFL_CUSTOM_INFO_PROGRAM=python3
-AFL_CUSTOM_INFO_PROGRAM_ARGV=python/arm64_harness.py @@
-AFL_CUSTOM_INFO_OUT=output//default
-# command line:
-'afl-fuzz' '-U' '-m' 'none' '-i' 'input/' '-o' 'output/' '--' 'python3' 'python/arm64_harness.py' '@@'

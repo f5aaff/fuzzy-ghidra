@@ -1,0 +1,10 @@
+VERSION=1
+/
+  00000000:simple_target.bin:ac10791805313371515890020
+/a
+  00000002:simple_target.bin:ac10791b1276298235866309
+/littleEndian
+  00000001:simple_target.bin:ac10791ae551879894231600
+/littleEndian/Bigendian
+NEXT-ID:3
+MD5:d41d8cd98f00b204e9800998ecf8427e
