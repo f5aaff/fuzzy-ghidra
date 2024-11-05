@@ -1,0 +1,7 @@
+# environment variables:
+AFL_CUSTOM_INFO_PROGRAM=python
+AFL_CUSTOM_INFO_PROGRAM_ARGV=test_harness_with_cov.py @@
+AFL_CUSTOM_INFO_OUT=./output//default
+AFL_DEBUG=1
+# command line:
+'afl-fuzz' '-U' '-m' 'none' '-i' './sample_inputs/' '-o' './output/' '--' 'python' 'test_harness_with_cov.py' '@@'
