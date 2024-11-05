@@ -2,6 +2,7 @@ import argparse
 import os
 import tempfile
 import subprocess
+import time
 from unicornafl import *
 from unicorn.arm64_const import *
 
@@ -95,6 +96,15 @@ def main():
     uc.reg_write(UC_ARM64_REG_SP, STACK_ADDRESS + STACK_SIZE)
     uc.mem_map(DATA_ADDRESS, DATA_SIZE_MAX)
     print(args.input_file)
+
+# Wait until the input file is created
+    input_file_path = args.input_file
+    while not os.path.exists(input_file_path):
+        print(f"Waiting for input file: {input_file_path}...")
+        time.sleep(1)  # Wait for a second before checking again
+
+    with open(input_file_path, 'r') as f:
+        input_data = f.read()
     # Read the input file content
     with open(args.input_file, 'r') as f:
         input_data = f.read()
