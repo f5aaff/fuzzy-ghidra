@@ -4,7 +4,7 @@ MODE=$1
 
 if [ "$MODE" == "afl"  ]; then
 
-    AFL_DEBUG=1 afl-fuzz -U -m none -i ./sample_inputs/ -o output -- python test_harness_with_cov_query.py @@
+    AFL_DEBUG=1 afl-fuzz -U -m none -i sample_inputs -o output -- python test_harness_with_cov_query.py @@
     exit 0
 fi
 
